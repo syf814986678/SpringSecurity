@@ -1,18 +1,20 @@
 package com.shiyifan;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.sql.DataSource;
+import java.sql.SQLException;
 
 @SpringBootTest
 class JavaMaven04SpringsecurityApplicationTests {
 
-    @Autowired
-    DataSource dataSource;
+
     @Test
-    void contextLoads() {
+    void contextLoads() throws SQLException {
+
+
+
+
     }
 
 }

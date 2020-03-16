@@ -1,3 +1,8 @@
 spring:
   thymeleaf:
     cache: false
+  datasource:
+    username: noahsark
+    password: Syf1998.
+    url: jdbc:sqlserver://111.231.112.198:49978;database=shiyifan
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
