@@ -24,7 +24,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @SneakyThrows
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserInfo userInfo = jdbcController.password();
+        UserInfo userInfo = jdbcController.password(username);
 
         String role = userInfo.getRole();
         System.out.println("role"+role);

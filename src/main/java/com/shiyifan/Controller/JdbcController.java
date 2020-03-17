@@ -4,6 +4,7 @@ import com.shiyifan.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
@@ -36,10 +37,10 @@ public class JdbcController {
         return "update-ok";
     }
     @RequestMapping("/password")
-    public UserInfo password() throws SQLException {
+    public UserInfo password(@RequestParam("user") String user) throws SQLException {
         Connection connection = dataSource.getConnection();
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from security where username = 'syf'");
+        ResultSet rs = statement.executeQuery("select * from security where username = N'"+user+"'");
         while (rs.next()){
             userInfo.setUsername(rs.getString(1));
             userInfo.setPassword(rs.getString(2));
